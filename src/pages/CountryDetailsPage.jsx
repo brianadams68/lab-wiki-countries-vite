@@ -14,7 +14,7 @@ const CountryDetailsPage = () => {
         setIsLoading(true);
         setError(null);
 
-        const response = await axios.get(`https://ih-countries-api.herokuapp.com/countries/${countryId}`);
+        const response = await axios.get(`https://ih-countries-api.herokuapp.com/countries/` + countryId );
         setCountryData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -40,7 +40,7 @@ const CountryDetailsPage = () => {
 
   return (
     <div>
-        <h1>Country Details</h1>
+      <h1>Country Details</h1>
       <h1>{countryData.name.common}</h1>
       <p>Alpha3Code: {countryData.cca3}</p>
     </div>
@@ -48,4 +48,5 @@ const CountryDetailsPage = () => {
 };
 
 export default CountryDetailsPage;
+
 
